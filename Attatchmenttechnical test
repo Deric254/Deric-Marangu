@@ -1,0 +1,200 @@
+
+Write a program that prints the numbers from 1 to 100. For multiples of 3, print "Fizz"; for 
+multiples of 5, print "Buzz"; and for numbers that are multiples of both 3 and 5, print 
+"FizzBuzz".
+
+<!DOCTYPE html>
+<head>
+<title>FizzBuzz</title>
+</head>
+<body>
+<h1>FizzBuzz</h1>
+<div id="output"></div>
+
+<script>
+    function fizzBuzz() {
+        let output = "";
+        for (let i = 1; i <= 100; i++) {
+            if (i % 3 === 0 && i % 5 === 0) {
+                output += "FizzBuzz<br>";
+            }
+            else if (i % 3 === 0) {
+                output += "Fizz<br>";
+            }
+            else if (i % 5 === 0) {
+                output += "Buzz<br>";
+            }
+            else {
+                output += i + "<br>";
+            }
+        }
+        document.getElementById("output").innerHTML = output;
+    }
+    fizzBuzz();
+</script>
+</body>
+</html>
+
+
+
+Write a program to generate the Fibonacci sequence up to 100.
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Fibonacci Sequence generator</title>
+</head>
+<body>
+<h1>Fibonacci Sequence up to 100</h1>
+<div id="fibseq"></div>
+<script>
+function Fibseqgen(limit) {
+  const sequence = [];
+  let a = 0, b = 1, nextTerm;
+
+  while (a <= limit) {
+    sequence.push(a);
+    nextTerm = a + b;
+   a = b;
+    b = nextTerm;
+  }
+
+  return sequence;
+}
+
+const fibonacciSequence = Fibseqgen(100);
+const fibonacciSequenceElement = document.getElementById('fibseq');
+fibonacciSequenceElement.innerHTML = fibonacciSequence.join(', ');
+</script>
+</body>
+</html>
+
+
+Write a program that takes an integer as input and returns true if the input is a power of two.Examples: 
+8=> returns true 
+6=> returns false 
+
+<!DOCTYPE html>
+<head>
+    <title>power of 2 validator</title>
+</head>
+<body>
+    <h3>Power of 2 validator</h3>
+    <label for="number">input a number:</label>
+    <input type="number" id="number">
+    <button onclick="validatePowerOfTwo()">Check</button>
+    <p id="result"></p>
+    <script>
+        function validatePowerOfTwo() {
+            var number = parseInt(document.getElementById("number").value);
+            var resultElement = document.getElementById("result");
+            if (number && (number & (number - 1)) === 0) {
+                resultElement.textContent = number + "= TRUE";
+            } else {
+                resultElement.textContent = number + "= FALSE";
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+Write a program that accepts a string as input, capitalizes the first letter of each word in the 
+string, and then returns the result string. 
+Examples: 
+"hi"=> returns "Hi" 
+"i love programming"=> returns "I Love Programming” 
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>word Capitalizer </title>
+    <script>
+        function capitalizeWords() {
+            var inputString = document.getElementById("inputString").value;
+            var words = inputString.split(" ");
+            var capitalizedWords = [];
+            for (var i = 0; i < words.length; i++) {
+                var capitalizedWord = words[i].charAt(0).toUpperCase() + words[i].slice(1);
+                capitalizedWords.push(capitalizedWord);
+            }
+            var resultString = capitalizedWords.join(" ");
+            document.getElementById("result").innerHTML = resultString;
+        }
+    </script>
+</head>
+<body>
+    <h2>Capitalize Words</h2>
+    <input type="text" id="inputString" placeholder="Enter a string">
+    <button onclick="capitalizeWords()">Capitalize</button>
+    <p id="result"></p>
+</body>
+</html>
+
+Question 5: Reverse Integer Write a program that takes an integer as input and returns an integer with reversed digit 
+ordering. 
+Examples: 
+For input 500, the program should return 5. 
+For input -56, the program should return -65. 
+For input -90, the program should return -9. 
+For input 91, the program should return 19. 
+
+<!DOCTYPE html>
+<head>
+<title>Reverse Integer</title>
+</head>
+<body>
+<h1>Reverse Integer</h1>
+<p>Enter an integer:</p>
+<input type="number" id="inputNumber">
+<button onclick="reverseInteger()">Reverse</button>
+<p id="result"></p>
+
+<script>
+function reverseInteger() {
+    var num = parseInt(document.getElementById("inputNumber").value);
+    var reversed = 0;
+    var sign = num < 0 ? -1 : 1;
+    num = Math.abs(num);
+   
+    while (num > 0) {
+        reversed = reversed * 10 + num % 10;
+        num = Math.floor(num / 10);
+    }
+   
+    reversed *= sign;
+    document.getElementById("result").innerHTML = "Reversed integer: " + reversed;
+}
+</script>
+</body>
+</html>
+Question 6: Count Vowels 
+Write a program that counts the number of vowels in a sentence. eg " Hello World " => returns 2
+<!DOCTYPE html>
+<head>
+    <title>Count Vowels</title>
+    <script>
+        function countVowels() {
+            const sentence = document.getElementById('sentence').value.toLowerCase();
+            const vowels = ['a', 'e', 'i', 'o', 'u'];
+            let count = 0;
+
+            for (let i = 0; i < sentence.length; i++) {
+                if (vowels.includes(sentence[i])) {
+                    count++;
+                }
+            }
+
+            document.getElementById('result').innerText = 'Number of vowels: ' + count;
+        }
+    </script>
+</head>
+<body>
+    <h1>Count Vowels</h1>
+    <label for="sentence">Enter a sentence:</label><br>
+    <input type="text" id="sentence"><br><br>
+    <button onclick="countVowels()">Count Vowels</button><br><br>
+    <div id="result"></div>
+</body>
+</html>
+

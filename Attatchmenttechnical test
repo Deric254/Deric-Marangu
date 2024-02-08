@@ -1,4 +1,4 @@
-
+1.
 Write a program that prints the numbers from 1 to 100. For multiples of 3, print "Fizz"; for 
 multiples of 5, print "Buzz"; and for numbers that are multiples of both 3 and 5, print 
 "FizzBuzz".
@@ -37,6 +37,8 @@ multiples of 5, print "Buzz"; and for numbers that are multiples of both 3 and 5
 
 
 
+
+2.
 Write a program to generate the Fibonacci sequence up to 100.
 
 <!DOCTYPE html>
@@ -61,7 +63,6 @@ function Fibseqgen(limit) {
 
   return sequence;
 }
-
 const fibonacciSequence = Fibseqgen(100);
 const fibonacciSequenceElement = document.getElementById('fibseq');
 fibonacciSequenceElement.innerHTML = fibonacciSequence.join(', ');
@@ -70,6 +71,8 @@ fibonacciSequenceElement.innerHTML = fibonacciSequence.join(', ');
 </html>
 
 
+
+3.
 Write a program that takes an integer as input and returns true if the input is a power of two.Examples: 
 8=> returns true 
 6=> returns false 
@@ -99,6 +102,8 @@ Write a program that takes an integer as input and returns true if the input is 
 </html>
 
 
+
+4.
 Write a program that accepts a string as input, capitalizes the first letter of each word in the 
 string, and then returns the result string. 
 Examples: 
@@ -131,7 +136,10 @@ Examples:
 </body>
 </html>
 
-Question 5: Reverse Integer Write a program that takes an integer as input and returns an integer with reversed digit 
+
+
+ 5.
+Write a program that takes an integer as input and returns an integer with reversed digit 
 ordering. 
 Examples: 
 For input 500, the program should return 5. 
@@ -168,8 +176,13 @@ function reverseInteger() {
 </script>
 </body>
 </html>
-Question 6: Count Vowels 
+
+
+
+
+6.
 Write a program that counts the number of vowels in a sentence. eg " Hello World " => returns 2
+
 <!DOCTYPE html>
 <head>
     <title>Count Vowels</title>
